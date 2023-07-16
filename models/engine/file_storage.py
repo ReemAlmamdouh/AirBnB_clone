@@ -3,6 +3,7 @@
 import json
 from models.base_model import BaseModel
 import uuid
+from models.user import User
 
 class FileStorage:
     """Represents store engine"""

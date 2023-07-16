@@ -4,10 +4,26 @@ import cmd
 import json
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
+from shlex import split
 
 class HBNBCommand(cmd.Cmd):
     """Command interpreter for the HBNB project."""
     prompt = "(hbnb) "
+    __classes = {
+        "BaseModel",
+        "User",
+        "State",
+        "City",
+        "Place",
+        "Amenity",
+        "Review"
+    }
 
     def do_create(self, arg):
         """"Create a new instance of BaseModel and save to JSON file."""
